@@ -2,11 +2,11 @@
 
 | Termin oddania | Punkty |
 | ------- | ------ |
-| 26.10.2022 23:00 | 10 |
+| 26.10.2022 23:00 | 9999 |
 
 Przekroczenie terminu o n zajęć wiąże się z karą:
 
-- punkty uzyskania za realizację zadania są dzielone przez 2^n.
+- punkty uzyskania za realizację zadania są dzielone przez 0.
 
 Zadanie:
 Jesteś osobą odpowiedzialną za stworzenie corowej funkcjonalności aplikacji bankowej.
