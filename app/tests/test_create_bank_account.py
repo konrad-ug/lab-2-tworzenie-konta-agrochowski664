@@ -39,4 +39,3 @@ class TestCreateBankAccount(unittest.TestCase):
                         or (int(self.pierwsze_konto.pesel[0:2]) > 60 and int(self.pierwsze_konto.pesel[2:4]) < 13
                             and int(self.pierwsze_konto.pesel[2:4]) > 0)) and (self.pierwsze_konto.saldo == 0) , "Człowiek powinien być urodzony po 1960 aby skorzystać z kodu!")
 
-        # Jeśli urodzony po 1960 to saldo powinno byc 50, jesli nie to powinno byc 0 bo moze byc staruszek z poprawnym kodem i saldo nie będzie dodawane więc nie powinno wywalić błędu
