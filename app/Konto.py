@@ -8,9 +8,10 @@ class Konto(Core):
         self.nazwisko = nazwisko
         self.pesel = pesel
         self.promo = promo
-        if(self.promo and re.match("^PROM_([A-Z]{3})$", self.promo) and (int(self.pesel[2:4]) > 12 and int(self.pesel[2:4]) < 81)
-                or self.promo and (int(self.pesel[0:2]) > 60 and int(self.pesel[2:4]) < 13
-                                   and int(self.pesel[2:4]) > 0)):
+
+        if(self.promo !=None  and re.match("^PROM_([A-Z]{3})$", self.promo) and ((int(self.pesel[2:4]) > 12 and int(self.pesel[2:4]) < 81)
+                or (int(self.pesel[0:2]) > 60 and int(self.pesel[2:4]) < 13
+                                   and int(self.pesel[2:4]) > 0))):
             self.saldo = 50
 
 
