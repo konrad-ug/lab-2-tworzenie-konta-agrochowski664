@@ -88,5 +88,6 @@ class TestDoTransfer(unittest.TestCase):
         konto.wyslijPrzelewEkspres(50, konto2)
         self.assertEqual(konto.saldo, 45 , "Zle saldo!")
         self.assertEqual(konto2.saldo, 50, "Zle saldo!")
+        print(konto.historia)
 
 

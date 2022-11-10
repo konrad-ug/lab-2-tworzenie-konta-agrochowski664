@@ -13,6 +13,9 @@ class Konto_Firmowe(Core):
     def wyslijPrzelewEkspres(self, kwota, odbiorca):
         handle = self.wyslijPrzelew(kwota,odbiorca)
         if(handle):
+            self.historia.append(int(-kwota))
+            self.historia.append(-5)
+            odbiorca.historia.append(int(kwota))
             self.saldo -=5
             return True
         else:

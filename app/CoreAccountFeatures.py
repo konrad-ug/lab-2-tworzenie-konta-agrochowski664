@@ -1,6 +1,7 @@
 class Core:
     def __init__(self):
         self.saldo = 0
+        self.historia = []
 
 
     def otrzymajPrzelew(self, kwota):
