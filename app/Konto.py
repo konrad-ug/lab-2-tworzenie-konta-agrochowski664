@@ -26,5 +26,18 @@ class Konto(Core):
         else:
             return False
 
+    def zaciagnij_kredyt(self, kwota):
+        if(len(self.historia) > 2 ):
+            if(self.historia[-1] > 0 and self.historia[-2] >0 and self.historia[-3] > 0 and sum(self.historia[-5:]) > kwota):
+                self.saldo +=kwota
+                return True
+            else:
+                return  False
+
+        else:
+            return False
+
+
+
 
 
