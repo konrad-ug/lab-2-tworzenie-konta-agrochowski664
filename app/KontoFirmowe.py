@@ -21,6 +21,14 @@ class Konto_Firmowe(Core):
         else:
             return False
 
+    def zaciągnij_kredyt(self,kwota):
+        if( (self.saldo >= 2 * kwota) and (-1775 in self.historia) ):
+            self.saldo += kwota
+            return True
+        else:
+            return False
+
+
 
 
 
