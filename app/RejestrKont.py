@@ -14,9 +14,10 @@ class Rejestr:
     def znajdz(cls, pesel): # pesel imo bezpieczniejszy niz konto
         for konto in cls.lista:
             if(konto.pesel == pesel):
-                return True
+                return konto
 
         return False
+
 
     @classmethod
     def liczba_kont(cls):

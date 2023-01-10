@@ -27,7 +27,7 @@ class accountRegistryTest(unittest.TestCase):
         self.assertEqual(self.rejestr.lista, lista)
 
     @parameterized.expand([
-        (konto1.pesel, True),
+        (konto1.pesel, konto1),
         (konto3.pesel, False),
     ])
     def test_znajdz(self, pesel, wynik):
