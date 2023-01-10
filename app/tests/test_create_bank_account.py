@@ -9,14 +9,20 @@ class TestCreateBankAccount(unittest.TestCase):
     promo = "PROM_XYZ"
     pierwsze_konto = Konto(imie, nazwisko , pesel, promo)
 
+    pesel2 = "02241808199"
+    imie2 = "Dariusz2"
+    nazwisko2 = "Januszewski2"
+    promo2 = "PROM_XYZ"
+    konto2 = Konto(imie2, nazwisko2 , pesel2, promo2)
+
+
     def test_tworzenie_konta(self):
 
         self.assertEqual(self.pierwsze_konto.imie, self.imie, "Imie nie zostało zapisane!")
         self.assertEqual(self.pierwsze_konto.nazwisko, self.nazwisko, "Nazwisko nie zostało zapisane!")
         self.assertEqual(self.pierwsze_konto.pesel, self.pesel, "Pesel nie został zapisany!")
-        if self.pierwsze_konto.promo:
-           return
         self.assertEqual(self.pierwsze_konto.saldo, 0, "Saldo nie jest zerowe!")
+        self.assertEqual(self.konto2.saldo, 50, "Saldo nie dodane!")
 
 
     def test_pesel(self):
@@ -24,8 +30,7 @@ class TestCreateBankAccount(unittest.TestCase):
 
 
     def test_create_promo(self):
-        if not self.pierwsze_konto.promo:
-           return
+
         self.assertTrue(self.pierwsze_konto.promo[0:4].isupper(), "PREFIX kodu nie jest duzymi!")
         self.assertEqual(self.pierwsze_konto.promo[0:4], "PROM", "Prefix to nie PROM!")
         self.assertEqual(self.pierwsze_konto.promo[4], "_", "Po prefiksie nie ma podłogi!")
@@ -39,4 +44,3 @@ class TestCreateBankAccount(unittest.TestCase):
                         or (int(self.pierwsze_konto.pesel[0:2]) > 60 and int(self.pierwsze_konto.pesel[2:4]) < 13
                             and int(self.pierwsze_konto.pesel[2:4]) > 0)) and (self.pierwsze_konto.saldo == 0) , "Człowiek powinien być urodzony po 1960 aby skorzystać z kodu!")
 
-        # Jeśli urodzony po 1960 to saldo powinno byc 50, jesli nie to powinno byc 0 bo moze byc staruszek z poprawnym kodem i saldo nie będzie dodawane więc nie powinno wywalić błędu
